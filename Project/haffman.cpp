@@ -33,3 +33,4 @@ int main()
 			freq[(unsigned char)x] = 0;
 		}
 	}
+}
