@@ -33,4 +33,13 @@ int main()
 			freq[(unsigned char)x] = 0;
 		}
 	}
+
+	std::string arr;
+	std::string str;
+	std::string codes[SIZE];
+	Node koren;
+	Node* root = &koren;
+	root = MakeTreeFromList(list.head);
+	printCodes(root, arr,codes);
+
 }

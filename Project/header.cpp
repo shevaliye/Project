@@ -70,3 +70,60 @@ void Linkedlist::print()
 		node = node->next;
 	}
 }
+Node* MakeNodeFromNode(Node* left, Node* right)
+{
+  Node* res = (Node*)malloc(sizeof(Node));
+  res->freq = left->freq + right->freq;
+  res->isSymb = 0;
+  res->symb = 0;
+  res->left = left;
+  res->right = right;
+  res->next = 0;
+  return res;
+}
+Node* MakeTreeFromList(Node* head)
+{
+  while (head && head->next)
+  {
+    Node* left = head;
+    Node* right = head->next;
+    add2list(&(head->next->next), MakeNodeFromNode(left, right));
+    head = head->next->next;
+  }
+  return head;
+}
+void add2list(Node** pphead, Node* ppres)
+{
+  if ((*pphead) == nullptr || (*pphead)->freq > ppres->freq)
+  {
+    ppres->next = *pphead;
+    *pphead = ppres;
+  }
+  else
+  {
+    Node* current = *pphead;
+    while (current->next != nullptr && current->next->freq <= ppres->freq)
+    {
+      current = current->next;
+    }
+    ppres->next = current->next;
+    current->next = ppres;
+  }
+}
+
+
+void printCodes(struct Node* root, std::string arr, std::string codes[SIZE])
+{
+  if (root->left != nullptr)
+  {
+    printCodes(root->left, arr+'0', codes);
+  }
+  if (root->right != nullptr) 
+  {
+    printCodes(root->right, arr+'1', codes);
+  }
+  if (root->left == nullptr && root->right == nullptr) 
+  {
+    codes[root->symb] = arr;
+  }
+}

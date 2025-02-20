@@ -22,6 +22,10 @@ typedef struct Linkedlist
 	void push(Node* node);
 	void print();
 };
+void printCodes(struct Node* root, std::string arr, std::string codes[SIZE]);
+Node* MakeNodeFromNode(Node* left, Node* right);
+Node* MakeTreeFromList(Node* head);
+void add2list(Node** pphead, Node* ppres);
 
 
 
