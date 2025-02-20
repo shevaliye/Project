@@ -85,4 +85,24 @@ int main()
 	outFile << res;
 	outFile.close();
 
+	std::string line;
+	char c;
+	std::string itog;
+	std::string fd = "output.txt";
+	std::ifstream inFile(fd, std::ios::binary);
+	while (inFile.get(c))
+	{
+	symb.symb = c;
+	line += symb.mbit.b1 + '0';
+	line += symb.mbit.b2 + '0';
+	line += symb.mbit.b3 + '0';
+	line += symb.mbit.b4 + '0';
+	line += symb.mbit.b5 + '0';
+	line += symb.mbit.b6 + '0';
+	line += symb.mbit.b7 + '0';
+	line += symb.mbit.b8 + '0';
+	}
+	line = line.substr(0, line.length() - tail);
+
+
 }
