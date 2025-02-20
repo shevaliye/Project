@@ -110,7 +110,26 @@ void add2list(Node** pphead, Node* ppres)
     current->next = ppres;
   }
 }
-
+char decode(Node** root, char c)
+{
+	if (c == '0')
+	{
+		(*root) = (*root)->left;
+		if ((*root)->symb)
+		{
+			return (*root)->symb;
+		}
+	}
+	if (c == '1')
+	{
+		(*root) = (*root)->right;
+		if ((*root)->symb)
+		{
+			return (*root)->symb;
+		}
+	}
+	return 0;
+}
 
 void printCodes(struct Node* root, std::string arr, std::string codes[SIZE])
 {

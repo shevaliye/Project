@@ -103,6 +103,22 @@ int main()
 	line += symb.mbit.b8 + '0';
 	}
 	line = line.substr(0, line.length() - tail);
+	Node* temp = root;
+	for (char c : line)
+	{
+		char x = decode(&root, c);
+		if (x != 0)
+		{
+			itog += x;
+			root = temp;
+		}
+	}
+	inFile.close();
+	std::string decode = "decode.txt";
+	std::ofstream decoding(decode, std::ios::binary);
+	decoding << itog;
+	decoding.close();
 
+	fclose(fr);
 
 }

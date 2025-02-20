@@ -1,0 +1,11 @@
+﻿  haffman.cpp
+C:\Users\Egor2\source\repos\Project\Project\linkedlist.h(18,16): warning C4091: typedef : пропускается слева от "Linkedlist", когда ни одна переменная не объявлена
+  (компиляция исходного файла "haffman.cpp")
+  
+C:\Users\Egor2\source\repos\Project\Project\haffman.cpp(50,12): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  header.cpp
+C:\Users\Egor2\source\repos\Project\Project\linkedlist.h(18,16): warning C4091: typedef : пропускается слева от "Linkedlist", когда ни одна переменная не объявлена
+  (компиляция исходного файла "header.cpp")
+  
+  Создание кода...
+  Project.vcxproj -> C:\Users\Egor2\source\repos\Project\x64\Debug\Project.exe

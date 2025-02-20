@@ -36,6 +36,7 @@ typedef union bit2char {
 		unsigned b8 : 1;
 	}mbit;
 }BIT2CHAR;
+char decode(Node** root, char c);
 void printCodes(struct Node* root, std::string arr, std::string codes[SIZE]);
 Node* MakeNodeFromNode(Node* left, Node* right);
 Node* MakeTreeFromList(Node* head);
